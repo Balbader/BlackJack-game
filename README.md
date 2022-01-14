@@ -1,7 +1,7 @@
 # BlackJack
 A simple BlackJack game built with JS to play in your browser.
 
-## Topic reviewed
+## Topics reviewed
 • arrays<br>
 • objects<br>
 • booleans<br>
