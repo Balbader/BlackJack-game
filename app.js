@@ -1,82 +1,79 @@
 // Create player object
-let player = {
-    name: "Sarah",
-    chips: 150,
-    isAlive: false,
-    hasBlackJack: false
-}
+const player = {
+	name: 'Sarah',
+	chips: 150,
+	isAlive: false,
+	hasBlackJack: false,
+};
 
-const playerEl = document.getElementById("player-el");
-playerEl.textContent = player.name + ": $" + player.chips;
+const cards = document.querySelector('#cards');
+const sumElement = document.querySelector('#sum-el');
+const messageElement = document.querySelector('#message-el');
+const newCard = document.querySelector('#new-card');
+const start = document.querySelector('#start');
+const playerElement = document.querySelector('#player-el');
+
+playerElement.textContent = player.name + ': $' + player.chips;
 
 // Get random card
 const getRandomCard = (min, max) => {
+	const random = Math.floor((Math.random() * (max - min)) + min);
 
-    let random = Math.floor(Math.random() * (max - min) + min);
+	if (random === 1) {
+		return 11;
+	}
 
-    if (random === 1)
-        return 11;
-    else if (random > 10)
-        return 10;
-    return random;
-}
+	if (random > 10) {
+		return 10;
+	}
+
+	return random;
+};
 
 // Render a game
 const startGame = () => {
+	start.disabled = true;
+	player.isAlive = true;
 
-    const start = document.getElementById("start");
-    start.disabled = true;
-    player.isAlive = true;
+	const allCards = [];
 
-    let allCards = [];
+	newCard.disabled = false;
+	newCard.addEventListener('click', () => {
+		drawNewCard(allCards);
+	});
 
-    const newCard = document.getElementById("new-card");
-    newCard.disabled = false;
-    newCard.addEventListener("click", () => {
-        drawNewCard(allCards);
-    })
+	drawNewCard(allCards);
+	drawNewCard(allCards);
+};
 
-    drawNewCard(allCards);
-    drawNewCard(allCards);
-}
+// Draw a new card
+const drawNewCard = array => {
+	let message = '';
 
-//Draw a new card
-const drawNewCard = (arr) => {
+	if (player.isAlive === true && player.hasBlackJack === false) {
+		const card = getRandomCard(1, 11);
+		array.push(card);
+		cards.textContent = 'Cards: ' + array;
+	}
 
-    let message = "";
+	const sum = array.reduce((left, right) => (left + right), 0);
+	sumElement.textContent = 'Sum: ' + sum;
 
-    const cards = document.getElementById("cards");
-    const sumEl = document.getElementById("sum-el");
-    const messageEl = document.getElementById("message-el");
+	if (sum <= 20) {
+		message = 'Hit?';
+	} else if (sum === 21) {
+		message = 'BlackJack!';
+		player.hasBlackJack = true;
+	} else {
+		message = 'You Loose!';
+		player.isAlive = false;
+	}
 
-    if (player.isAlive === true && player.hasBlackJack === false) {
-        const card = getRandomCard(1, 11);
-        arr.push(card);
-        cards.textContent = "Cards: " + arr;
-    }
-
-    const sum = arr.reduce((left, right) => {
-        return (left + right);
-    }, 0);
-    sumEl.textContent = "Sum: " + sum;
-
-    if (sum <= 20) {
-        message = "Hit?";
-    } else if (sum === 21) {
-        message = "BlackJack!";
-        player.hasBlackJack = true;
-    } else {
-        message = "You Loose!";
-        player.isAlive = false;
-    }
-
-    messageEl.textContent = message;
-}
+	messageElement.textContent = message;
+};
 
 // Start a new game
-const start = document.getElementById("start");
-
-start.addEventListener("click", () => {
-    startGame();
+start.addEventListener('click', () => {
+	startGame();
 });
 
