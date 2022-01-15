@@ -1,10 +1,13 @@
 // Create player object
-const player = {
+let player = {
     name: "Sarah",
-    chips: "150",
+    chips: 150,
     isAlive: false,
     hasBlackJack: false
 }
+
+const playerEl = document.getElementById("player-el");
+playerEl.textContent = player.name + ": $" + player.chips;
 
 // Get random card
 const getRandomCard = (min, max) => {
@@ -27,9 +30,9 @@ const renderGame = () => {
     let allCards = [firstCard, secondCard];
     let sum = firstCard + secondCard;
 
-    let cards = document.getElementById("cards");
-    let sumEl = document.getElementById("sum-el");
-    let messageEl = document.getElementById("message-el");
+    const cards = document.getElementById("cards");
+    const sumEl = document.getElementById("sum-el");
+    const messageEl = document.getElementById("message-el");
 
     cards.textContent = "Cards: " + allCards[0] + ", " + allCards[1];
     sumEl.textContent = "Sum: " + sum;
@@ -50,13 +53,11 @@ const renderGame = () => {
 // Start a game
 const startGame = () => {
 
-    let playerEl = document.getElementById("player-el");
-    playerEl.textcontext = player.name + ": $" + player.chips;
     player.isAlive = true;
     renderGame();
 }
 
-// Draw a new card
+//Draw a new card
 const drawNewCard = () => {
 
     let message = "";
@@ -64,15 +65,13 @@ const drawNewCard = () => {
     let secondCard = getRandomCard(1, 11);
     let allCards = [firstCard, secondCard];
     let sum = firstCard + secondCard;
-    let card = 0;
+    let card;
 
-    let cards = document.getElementById("cards");
-    let sumEl = document.getElementById("sum-el");
-    let messageEl = document.getElementById("message-el");
+    const cards = document.getElementById("cards");
+    const sumEl = document.getElementById("sum-el");
+    const messageEl = document.getElementById("message-el");
 
-    cards.textContent = "Cards: " + allCards[0] + ", " + allCards[1];
-
-    if (player.isAlive && player.hasBlackJack === false) {
+    if (player.isAlive === true && player.hasBlackJack === false) {
         card = getRandomCard(1, 11);
         allCards.push(card);
         cards.textContent = "Cards: " + allCards;
