@@ -22,62 +22,43 @@ const getRandomCard = (min, max) => {
 }
 
 // Render a game
-const renderGame = () => {
-
-    let message = "";
-    let firstCard = getRandomCard(1, 11);
-    let secondCard = getRandomCard(1, 11);
-    let allCards = [firstCard, secondCard];
-    let sum = firstCard + secondCard;
-
-    const cards = document.getElementById("cards");
-    const sumEl = document.getElementById("sum-el");
-    const messageEl = document.getElementById("message-el");
-
-    cards.textContent = "Cards: " + allCards[0] + ", " + allCards[1];
-    sumEl.textContent = "Sum: " + sum;
-
-    if (sum <= 20) {
-        message = "Hit?";
-    } else if (sum === 21) {
-        message = "BlackJack!";
-        player.hasBlackJack = true;
-    } else {
-        message = "You Loose!";
-        player.isAlive = false;
-    }
-
-    messageEl.textContent = message;
-}
-
-// Start a game
 const startGame = () => {
 
+    const start = document.getElementById("start");
+    start.disabled = true;
     player.isAlive = true;
-    renderGame();
+
+    let allCards = [];
+
+    const newCard = document.getElementById("new-card");
+    newCard.disabled = false;
+    newCard.addEventListener("click", () => {
+        drawNewCard(allCards);
+    })
+
+    drawNewCard(allCards);
+    drawNewCard(allCards);
 }
 
 //Draw a new card
-const drawNewCard = () => {
+const drawNewCard = (arr) => {
 
     let message = "";
-    let firstCard = getRandomCard(1, 11);
-    let secondCard = getRandomCard(1, 11);
-    let allCards = [firstCard, secondCard];
-    let sum = firstCard + secondCard;
-    let card;
 
     const cards = document.getElementById("cards");
     const sumEl = document.getElementById("sum-el");
     const messageEl = document.getElementById("message-el");
 
     if (player.isAlive === true && player.hasBlackJack === false) {
-        card = getRandomCard(1, 11);
-        allCards.push(card);
-        cards.textContent = "Cards: " + allCards;
-        sum += card;
-        sumEl.textContent = "Sum: " + sum;
+        const card = getRandomCard(1, 11);
+        arr.push(card);
+        cards.textContent = "Cards: " + arr;
     }
+
+    const sum = arr.reduce((left, right) => {
+        return (left + right);
+    }, 0);
+    sumEl.textContent = "Sum: " + sum;
 
     if (sum <= 20) {
         message = "Hit?";
@@ -99,7 +80,3 @@ start.addEventListener("click", () => {
     startGame();
 });
 
-// Draw a new card
-const newCard = document.addEventListener("click", () => {
-    drawNewCard();
-})
