@@ -5,7 +5,7 @@ let player = {
     hasBlackJack: false
 }
 
-let playerEl = document.getElementById("player-el");
+const playerEl = document.getElementById("player-el");
 playerEl.textContent = player.name + ": $" + player.chips;
 
 let message = "";
@@ -13,12 +13,13 @@ let firstCard = 0;
 let secondCard = 0;
 let allCards = [];
 let sum = 0;
+let card = 0
 let hasBlackJack = false;
 let isAlive = false;
-let cards = document.getElementById("cards");
-let sumEl = document.getElementById("sum-el");
-let messageEl = document.getElementById("message-el");
-let card = 0
+
+const cards = document.getElementById("cards");
+const sumEl = document.getElementById("sum-el");
+const messageEl = document.getElementById("message-el");
 
 const getRandom = (min, max) => {
 
