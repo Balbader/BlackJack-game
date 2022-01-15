@@ -56,6 +56,7 @@ const startGame = () => {
     renderGame();
 }
 
+// Draw a new card
 const drawNewCard = () => {
 
     let message = "";
