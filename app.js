@@ -30,6 +30,23 @@ const getRandomCard = (min, max) => {
 	return random;
 };
 
+// Chec player status
+const checkPlayerStatus = sum => {
+	let message = '';
+
+	if (sum <= 20) {
+		message = 'Hit?';
+	} else if (sum === 21) {
+		message = 'BlackJack!';
+		player.hasBlackJack = true;
+	} else {
+		message = 'You Loose!';
+		player.isAlive = false;
+	}
+
+	messageElement.textContent = message;
+};
+
 // Render a game
 const startGame = () => {
 	start.disabled = true;
@@ -48,8 +65,6 @@ const startGame = () => {
 
 // Draw a new card
 const drawNewCard = array => {
-	let message = '';
-
 	if (player.isAlive === true && player.hasBlackJack === false) {
 		const card = getRandomCard(1, 11);
 		array.push(card);
@@ -59,17 +74,7 @@ const drawNewCard = array => {
 	const sum = array.reduce((left, right) => (left + right), 0);
 	sumElement.textContent = 'Sum: ' + sum;
 
-	if (sum <= 20) {
-		message = 'Hit?';
-	} else if (sum === 21) {
-		message = 'BlackJack!';
-		player.hasBlackJack = true;
-	} else {
-		message = 'You Loose!';
-		player.isAlive = false;
-	}
-
-	messageElement.textContent = message;
+	checkPlayerStatus(sum);
 };
 
 // Start a new game
