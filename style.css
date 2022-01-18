@@ -28,28 +28,17 @@ h1 {
     font-style: italic;
 }
 
-
-#start {
+button {
     font-size: .75em;
     font-weight: bolder;
     padding: 10px;
-    width: 300px;
-    border-radius: 5px;
-    border: 1px solid goldenrod;
-    background-color: goldenrod;
-    color: green;
-}
-
-#new-card {
     margin-top: 5px;
-    font-size: .75em;
-    font-weight: bolder;
-    padding: 10px;
     width: 300px;
     border-radius: 5px;
     border: 1px solid goldenrod;
     background-color: goldenrod;
     color: green;
+
 }
 
 #btns {
