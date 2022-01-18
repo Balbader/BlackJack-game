@@ -12,6 +12,7 @@ const messageElement = document.querySelector('#message-el');
 const newCard = document.querySelector('#new-card');
 const start = document.querySelector('#start');
 const resetBtn = document.createElement('button');
+const btns = document.querySelector("#btns");
 const playerElement = document.querySelector('#player-el');
 
 playerElement.textContent = player.name + ': $' + player.chips;
@@ -68,8 +69,6 @@ const drawNewCard = array => {
 const reset = () => {
 	resetBtn.disabled = false;
 	resetBtn.innerHTML = 'NEW GAME';
-
-	const btns = document.querySelector('#btns')
 	btns.append(resetBtn);
 
 	resetBtn.addEventListener('click', () => {
