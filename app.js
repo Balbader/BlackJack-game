@@ -1,4 +1,4 @@
-// Create player object 
+// Create player object
 const player = {
 	name: 'Sarah',
 	chips: 150,
