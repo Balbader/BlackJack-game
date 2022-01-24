@@ -14,6 +14,7 @@ const newCard = document.querySelector('#new-card');
 const start = document.querySelector('#start');
 const newGame = document.querySelector('#new-game');
 const playerElement = document.querySelector('#player-el');
+const computer = document.querySelector('#computer-card');
 
 playerElement.textContent = player.name + ': $' + player.chips;
 
@@ -48,6 +49,7 @@ const startGame = () => {
 
 	drawNewCard(allCards);
 	drawNewCard(allCards);
+	console.log(allCards);
 };
 
 // Draw a new card
