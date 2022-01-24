@@ -12,8 +12,7 @@ const sumElement = document.querySelector('#sum-el');
 const messageElement = document.querySelector('#message-el');
 const newCard = document.querySelector('#new-card');
 const start = document.querySelector('#start');
-const resetBtn = document.getElementById('new-game');
-const btns = document.querySelector('#btns');
+const resetBtn = document.querySelector('#new-game');
 const playerElement = document.querySelector('#player-el');
 
 playerElement.textContent = player.name + ': $' + player.chips;
