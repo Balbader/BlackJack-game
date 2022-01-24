@@ -6,12 +6,13 @@ const player = {
 	hasBlackJack: false,
 };
 
+let allCards = [];
 const cards = document.querySelector('#cards');
 const sumElement = document.querySelector('#sum-el');
 const messageElement = document.querySelector('#message-el');
 const newCard = document.querySelector('#new-card');
 const start = document.querySelector('#start');
-const resetBtn = document.createElement('button');
+const resetBtn = document.getElementById('new-game');
 const btns = document.querySelector('#btns');
 const playerElement = document.querySelector('#player-el');
 
@@ -39,8 +40,7 @@ const startGame = () => {
 	newCard.disabled = false;
 	player.isAlive = true;
 
-	const allCards = [];
-	console.log('startGame():', allCards);
+	allCards = [];
 
 	newCard.addEventListener('click', () => {
 		drawNewCard(allCards);
@@ -66,11 +66,8 @@ const drawNewCard = array => {
 };
 
 // Reset the game
-const reset = () => {
+const newGame = () => {
 	resetBtn.disabled = false;
-	resetBtn.innerHTML = 'NEW GAME';
-	btns.append(resetBtn);
-
 	resetBtn.addEventListener('click', () => {
 		startGame();
 		console.log('clicked');
@@ -86,11 +83,13 @@ const checkPlayerStatus = sum => {
 	} else if (sum === 21) {
 		message = 'BlackJack!';
 		player.hasBlackJack = true;
-		reset();
+		newCard.disabled = true;
+		newGame();
 	} else {
 		message = 'You Loose!';
 		player.isAlive = false;
-		reset();
+		newCard.disabled = true;
+		newGame();
 	}
 
 	messageElement.textContent = message;
