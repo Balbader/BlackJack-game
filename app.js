@@ -74,7 +74,7 @@ const resetGame = () => {
 	});
 };
 
-// Chec player status
+// Check player status
 const checkPlayerStatus = sum => {
 	let message = '';
 
