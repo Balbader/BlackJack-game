@@ -116,7 +116,7 @@ const computerDraw = (arr) => {
 	compSum.textContent = 'Computer Sum: ' + computerScore;
 
 	checkComputerStatus();
-}
+};
 
 // Reset the game
 const resetGame = () => {
