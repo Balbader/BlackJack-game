@@ -16,24 +16,23 @@
         <p id="message-el">Want to play a round?</p>
 
         <!-- This is where the action will happen -->
-        <div class="players">
-            <div id="player"></div>
-            <div id="computer"></div>
+        <div id="container">
+            <div class="players">
+                <div id="player">
+                    <p id="cards">Player Cards:</p>
+                    <p id="sum-el">Player Total: 0</p>
+                    <button id="start">START GAME</button>
+                    <button id="new-card" disabled>NEW CARD</button>
+                </div>
+                <div id="computer">
+                    <p id="computer-cards">Computer Cards:</p>
+                    <p id="computer-sum">Computer Total: 0</p>
+                    <button id="computer-card" disabled>COMPUTER PLAY</button>
+                </div>
+            </div>
+            <!--<p id="player-el"></p>-->
         </div>
-        <!--<div class="content">-->
-        <!--<p id="message-el">Want to play a round?</p>-->
-        <!--<p id="cards">Player Cards:</p>-->
-        <!--<p id="sum-el">Player Total: 0</p>-->
-        <!--<p id="computer-cards">Computer Cards:</p>-->
-        <!--<p id="computer-sum">Computer Total: 0</p>-->
-        <!--<div id="btns">-->
-        <!--<button id="start">START GAME</button>-->
-        <!--<button id="new-card" disabled>NEW CARD</button>-->
-        <!--<button id="computer-card" disabled>COMPUTER</button>-->
-        <!--<button id="new-game" disabled>NEW GAME</button>-->
-        <!--</div>-->
-        <!--<p id="player-el"></p>-->
-        <!--</div>-->
+        <button id="new-game" disabled>NEW GAME</button>
     </div>
     <script src="./computer.js"></script>
 </body>
