@@ -12,6 +12,9 @@
     <div class="container">
         <h1 id="title">BlackJack</h1>
 
+        <!-- Player Info -->
+        <p id="player-el">Hey you!</p>
+
         <!-- Message display: game status -->
         <p id="message-el">Want to play a round?</p>
 
@@ -19,20 +22,24 @@
         <div id="container">
             <div class="players">
                 <div id="player">
-                    <p id="cards">Player Cards:</p>
+                    <p id="cards">Player Cards:<br><span>numbers will display here</span></p>
                     <p id="sum-el">Player Total: 0</p>
-                    <button id="start">START GAME</button>
-                    <button id="new-card" disabled>NEW CARD</button>
                 </div>
                 <div id="computer">
-                    <p id="computer-cards">Computer Cards:</p>
+                    <p id="computer-cards">Computer Cards:<br><span>numbers will display here</span></p>
                     <p id="computer-sum">Computer Total: 0</p>
-                    <button id="computer-card" disabled>COMPUTER PLAY</button>
                 </div>
             </div>
             <!--<p id="player-el"></p>-->
         </div>
-        <button id="new-game" disabled>NEW GAME</button>
+
+        <!-- That's where our user will be able to click frenetically :) -->
+        <div id="btns">
+            <button id="start">START GAME</button>
+            <button id="new-card" disabled>NEW CARD</button>
+            <button id="computer-card" disabled>COMPUTER PLAY</button>
+            <button id="new-game" disabled>NEW GAME</button>
+        </div>
     </div>
     <script src="./computer.js"></script>
 </body>
