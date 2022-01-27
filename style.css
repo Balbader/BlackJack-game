@@ -17,6 +17,14 @@ h1 {
     color: goldenrod;
     font-size: 5em;
     margin-bottom: 0;
+    border: 5px solid goldenrod;
+}
+
+#player-el {
+    color: white;
+    font-size: 4em;
+    border: 5px solid goldenrod;
+    margin-bottom: 0;
 }
 
 #message-el {
@@ -24,6 +32,7 @@ h1 {
     font-style: italic;
     color: white;
     font-size: 50px;
+    border: 5px solid goldenrod;
 }
 
 .players {
@@ -43,9 +52,23 @@ h1 {
     width: 400px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
+    text-align: center;
     color: white;
+    font-size: 20px;
+}
+
+p {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1100px;
 }
 
 button {
@@ -57,6 +80,6 @@ button {
     border-radius: 5px;
     border: 1px solid goldenrod;
     background-color: goldenrod;
-    color: green;
+    color: white;
 }
 
