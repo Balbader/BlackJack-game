@@ -10,12 +10,20 @@ html, body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border: 5px solid goldenrod;
 }
 
 h1 {
     color: goldenrod;
     font-size: 5em;
     margin-bottom: 0;
+}
+
+#message-el {
+    font-weight: bolder;
+    font-style: italic;
+    color: white;
+    font-size: 50px;
 }
 
 .players {
@@ -33,35 +41,25 @@ h1 {
     border: 1px solid black;
     height: 550px;
     width: 400px;
-}
-/*.content {*/
-    /*display: flex;*/
-    /*flex-direction: column;*/
-    /*justify-content: space-evenly;*/
-    /*align-items: center;*/
-    /*color: white;*/
-    /*font-size: 3em;*/
-/*}*/
-
-#message-el {
-    font-weight: bolder;
-    font-style: italic;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     color: white;
-    font-size: 50px;
+    font-size: 20px;
 }
 
-/*button {*/
-    /*font-size: .75em;*/
-    /*font-weight: bolder;*/
-    /*padding: 10px;*/
-    /*margin-top: 5px;*/
-    /*width: 300px;*/
-    /*border-radius: 5px;*/
-    /*border: 1px solid goldenrod;*/
-    /*background-color: goldenrod;*/
-    /*color: green;*/
-
-/*}*/
+button {
+    font-size: .75em;
+    font-weight: bolder;
+    padding: 10px;
+    margin-top: 5px;
+    width: 150px;
+    border-radius: 5px;
+    border: 1px solid goldenrod;
+    background-color: goldenrod;
+    color: green;
+}
 
 /*#btns {*/
     /*display: flex;*/
