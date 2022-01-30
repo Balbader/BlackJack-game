@@ -12,6 +12,11 @@ html, body {
     align-items: center;
 }
 
+#container {
+    margin-top: -60px;
+}
+
+
 h1 {
     color: goldenrod;
     font-size: 5em;
@@ -42,7 +47,7 @@ h1 {
 }
 
 #player, #computer {
-    border: 1px solid black;
+    border: 1px solid goldenrod;
     height: 550px;
     width: 400px;
     display: flex;
@@ -52,7 +57,7 @@ h1 {
     text-align: center;
     color: white;
     font-size: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 
 .cards-img {
@@ -66,7 +71,7 @@ img {
     width: 200px;
 }
 
-#img-2 {
+.img-2 {
     margin-left: -150px;
 }
 
