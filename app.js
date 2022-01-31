@@ -61,7 +61,7 @@ const drawNewCard = array => {
 	}
 
 	const sum = array.reduce((left, right) => (left + right), 0);
-	sumElement.textContent = 'Sum: ' + sum;
+	sumElement.textContent = 'Player Total: ' + sum;
 
 	checkPlayerStatus(sum);
 };
