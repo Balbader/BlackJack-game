@@ -1,6 +1,6 @@
 const computer = {
 	isAlive: false,
-	hasBlackJack: false
+	hasBlackJack: false,
 };
 
 const computerScore = document.querySelector('#computer-total');
@@ -33,7 +33,7 @@ const computerTurn = () => {
 
 	dealNewCard(computerCards);
 	dealNewCard(computerCards);
-	console.log('Computer Turn: ', computerCards);
+	console.log('Computer Turn:', computerCards);
 };
 
 // Deal new card
@@ -57,7 +57,7 @@ const checkComputerStatus = computerTotalScore => {
 	if (computerTotalScore <= 19) {
 		computer.isAlive = true;
 		computer.hasBlackJack = false;
-		//dealNewCard(computerCards);
+		dealNewCard(computerCards);
 	}
 
 	if (computerTotalScore === 20) {
@@ -70,7 +70,7 @@ const checkComputerStatus = computerTotalScore => {
 	}
 
 	messageElement.textContent = message;
-}
+};
 
 computerPlay.addEventListener('click', () => {
 	computerTurn();
