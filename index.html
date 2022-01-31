@@ -12,9 +12,6 @@
     <div class="container">
         <h1 id="title">BlackJack</h1>
 
-        <!-- Player Info -->
-        <!--<p id="player-el">Hey you!</p>-->
-
         <!-- Message display: game status -->
         <p id="message-el">Want to play a round?</p>
 
@@ -40,10 +37,10 @@
                         <img id='cp-1' class="img-1" src="#" alt="card image">
                         <img id='cp-2' class="img-2" src="#" alt="card image">
                     </div>
-                    <p id="computer-cards">Computer Cards:<br>
-                        <span>numbers will display here</span>
+                    <p>Computer Cards:<br>
+                        <span id="computer-cards">numbers will display here</span>
                     </p>
-                    <p id="computer-sum">Computer Total: 0</p>
+                    <p id="computer-total">Computer Total: 0</p>
                 </div>
             </div>
         </div>
@@ -52,11 +49,11 @@
         <div id="btns">
             <button id="start">START GAME</button>
             <button id="new-card" disabled>NEW CARD</button>
-            <button id="computer-card" disabled>COMPUTER PLAY</button>
+            <button id="computer-play">COMPUTER PLAY</button>
             <button id="new-game" disabled>NEW GAME</button>
         </div>
     </div>
-    <script src="./cards.js"></script>
+    <script src="./computer.js"></script>
 </body>
 
 </html>
