@@ -1,3 +1,5 @@
+console.log('hello world!');
+
 const computer = {
 	isAlive: false,
 	hasBlackJack: false,
@@ -33,7 +35,7 @@ const computerTurn = () => {
 
 	dealNewCard(computerCards);
 	dealNewCard(computerCards);
-	console.log('Computer Turn:', computerCards);
+	console.log(computerCards);
 };
 
 // Deal new card
@@ -54,20 +56,34 @@ const dealNewCard = array => {
 const checkComputerStatus = computerTotalScore => {
 	let message = '';
 
-	if (computerTotalScore <= 19) {
-		computer.isAlive = true;
-		computer.hasBlackJack = false;
-		dealNewCard(computerCards);
-	}
-
-	if (computerTotalScore === 20) {
-		message = 'That\'s it for us!';
-	}
-
-	if (computerTotalScore === 21) {
-		message = 'BlackJack!!';
+	if (computerTotalScore <= 20) {
+		message = 'Hit?';
+	} else if (computerTotalScore === 21) {
+		message = 'BlackJack!';
 		computer.hasBlackJack = true;
+	} else {
+		message = 'Computer Lost!';
+		computer.isAlive = false;
 	}
+
+	//if (computerTotalScore > 21) {
+	//computer.isAlive = false;
+	//}
+
+	//if (computerTotalScore <= 19) {
+	//computer.isAlive = true;
+	//computer.hasBlackJack = false;
+	//dealNewCard(computerCards);
+	//}
+
+	//if (computerTotalScore === 20) {
+	//message = 'That\'s it for us!';
+	//}
+
+	//if (computerTotalScore === 21) {
+	//message = 'BlackJack!!';
+	//computer.hasBlackJack = true;
+	//}
 
 	messageElement.textContent = message;
 };
@@ -75,3 +91,4 @@ const checkComputerStatus = computerTotalScore => {
 computerPlay.addEventListener('click', () => {
 	computerTurn();
 });
+
