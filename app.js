@@ -1,9 +1,8 @@
 // Create player object
 const player = {
-	name: 'Sarah',
-	chips: 150,
 	isAlive: false,
 	hasBlackJack: false,
+	cards: []
 };
 
 let allCards = [];
