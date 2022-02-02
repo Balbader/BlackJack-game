@@ -1,86 +1,101 @@
-
 const playerCard1 = document.querySelector('#pl-1');
 const playerCard2 = document.querySelector('#pl-2');
 const computerCard1 = document.querySelector('#cp-1');
 const computerCard2 = document.querySelector('#cp-2');
 
-const cards = {
-	aceOfClubs: './cards/ace_of_clubs.svg',
-	aceOfHearts: './cards/ace_of_hearts.svg',
-	aceOfSpades: './cards/ace_of_spades.svg',
-	aceOfDiamonds: './cards/ace_of_diamonds.svg',
-	kingOfClubs: './cards/king_of_clubs.svg',
-	kingOfHearts: './cards/king_of_hearts.svg',
-	kingOfSpades: './cards/king_of_spades.svg',
-	kingOfDiamonds: './cards/king_of_diamonds.svg',
-	queenOfClubs: './cards/queen_of_clubs.svg',
-	queenOfHearts: './cards/queen_of_hearts.svg',
-	queenOfSpades: './cards/queen_of_spades.svg',
-	queenOfDiamonds: './cards/queen_of_diamonds.svg',
-	jackOfClubs: './cards/jack_of_clubs.svg',
-	jackOfHearts: './cards/jack_of_hearts.svg',
-	jackOfSpades: './cards/jack_of_spades.svg',
-	jackOfDiamonds: './cards/jack_of_diamonds.svg',
-	tenOfClubs: './cards/10_of_clubs.svg',
-	tenOfHearts: './cards/10_of_hearts.svg',
-	tenOfSpades: './cards/10_of_spades.svg',
-	tenOfDiamonds: './cards/10_of_diamonds.svg',
-	nineOfClubs: './cards/9_of_clubs.svg',
-	nineOfHearts: './cards/9_of_hearts.svg',
-	nineOfSpades: './cards/9_of_spades.svg',
-	nineOfDiamonds: './cards/9_of_diamonds.svg',
-	eightOfClubs: './cards/8_of_clubs.svg',
-	eightOfHearts: './cards/8_of_hearts.svg',
-	eightOfSpades: './cards/8_of_spades.svg',
-	eightOfDiamonds: './cards/8_of_diamonds.svg',
-	sevenOfClubs: './cards/7_of_clubs.svg',
-	sevenOfHearts: './cards/7_of_hearts.svg',
-	sevenOfSpades: './cards/7_of_spades.svg',
-	sevenOfDiamonds: './cards/7_of_diamonds.svg',
-	sixOfClubs: './cards/6_of_clubs.svg',
-	sixOfHearts: './cards/6_of_hearts.svg',
-	sixOfSpades: './cards/6_of_spades.svg',
-	sixOfDiamonds: './cards/6_of_diamonds.svg',
-	fiveOfClubs: './cards/5_of_clubs.svg',
-	fiveOfHearts: './cards/5_of_hearts.svg',
-	fiveOfSpades: './cards/5_of_spades.svg',
-	fiveOfDiamonds: './cards/5_of_diamonds.svg',
-	fourOfClubs: './cards/4_of_clubs.svg',
-	fourOfHearts: './cards/4_of_hearts.svg',
-	fourOfSpades: './cards/4_of_spades.svg',
-	fourOfDiamonds: './cards/4_of_diamonds.svg',
-	threeOfClubs: './cards/3_of_clubs.svg',
-	threeOfHearts: './cards/3_of_hearts.svg',
-	threeOfSpades: './cards/3_of_spades.svg',
-	threeOfDiamonds: './cards/3_of_diamonds.svg',
-	twoOfClubs: './cards/2_of_clubs.svg',
-	twoOfHearts: './cards/2_of_hearts.svg',
-	twoOfSpades: './cards/2_of_spades.svg',
-	twoOfDiamonds: './cards/2_of_diamonds.svg',
-	oneOfClubs: './cards/1_of_clubs.svg',
-	oneOfHearts: './cards/1_of_hearts.svg',
-	oneOfSpades: './cards/1_of_spades.svg',
-	oneOfDiamonds: './cards/1_of_diamonds.svg',
+const cardImages = {
+	eleven: [
+		'./cards/ace_of_clubs.svg',
+		'./cards/ace_of_hearts.svg',
+		'./cards/ace_of_spades.svg',
+		'./cards/ace_of_diamonds.svg',
+	],
+	ten: [
+		'./cards/king_of_clubs.svg',
+		'./cards/king_of_hearts.svg',
+		'./cards/king_of_spades.svg',
+		'./cards/king_of_diamonds.svg',
+		'./cards/queen_of_clubs.svg',
+		'./cards/queen_of_hearts.svg',
+		'./cards/queen_of_spades.svg',
+		'./cards/queen_of_diamonds.svg',
+		'./cards/jack_of_clubs.svg',
+		'./cards/jack_of_hearts.svg',
+		'./cards/jack_of_spades.svg',
+		'./cards/jack_of_diamonds.svg',
+		'./cards/10_of_clubs.svg',
+		'./cards/10_of_hearts.svg',
+		'./cards/10_of_spades.svg',
+		'./cards/10_of_diamonds.svg',
+	],
+	nine: [
+		'./cards/9_of_clubs.svg',
+		'./cards/9_of_hearts.svg',
+		'./cards/9_of_spades.svg',
+		'./cards/9_of_diamonds.svg',
+	],
+	eight: [
+		'./cards/8_of_clubs.svg',
+		'./cards/8_of_hearts.svg',
+		'./cards/8_of_spades.svg',
+		'./cards/8_of_diamonds.svg',
+	],
+	seven: [
+		'./cards/7_of_clubs.svg',
+		'./cards/7_of_hearts.svg',
+		'./cards/7_of_spades.svg',
+		'./cards/7_of_diamonds.svg',
+	],
+	six: [
+		'./cards/6_of_clubs.svg',
+		'./cards/6_of_hearts.svg',
+		'./cards/6_of_spades.svg',
+		'./cards/6_of_diamonds.svg',
+	],
+	five: [
+		'./cards/5_of_clubs.svg',
+		'./cards/5_of_hearts.svg',
+		'./cards/5_of_spades.svg',
+		'./cards/5_of_diamonds.svg',
+	],
+	four: [
+		'./cards/4_of_clubs.svg',
+		'./cards/4_of_hearts.svg',
+		'./cards/4_of_spades.svg',
+		'./cards/4_of_diamonds.svg',
+	],
+	three: [
+		'./cards/3_of_clubs.svg',
+		'./cards/3_of_hearts.svg',
+		'./cards/3_of_spades.svg',
+		'./cards/3_of_diamonds.svg',
+	],
+	two: [
+		'./cards/2_of_clubs.svg',
+		'./cards/2_of_hearts.svg',
+		'./cards/2_of_spades.svg',
+		'./cards/2_of_diamonds.svg',
+	],
 };
 
+// Get random number
+const getRandomNbr = (min, max) => {
+	const random = Math.floor((Math.random() * (max - min)) + min);
+	return random;
+};
+
+const randNbr = getRandomNbr(2, 12);
+console.log('randNbr: ', randNbr);
+
 // Get random card
-const getRandomCard = (cards) => {
-	const cardEntries = Object.entries(cards);
+const getRandomCard = object => {
+	const cardEntries = Object.entries(object);
 	const randomCard = Math.floor((Math.random() * cardEntries.length));
 	return cardEntries[randomCard][1];
 };
 
 // Change Image
-const changeImg = element => {
-	element.src = getRandomCard(cards);
+const changeImg = (element, object) => {
+	element.src = getRandomCard(object);
 };
-
-const distributeCards = () => {
-	changeImg(playerCard1);
-	changeImg(computerCard1);
-	changeImg(playerCard2);
-	changeImg(computerCard2);
-};
-
-distributeCards();
 
