@@ -78,20 +78,6 @@ const cardImages = {
 	],
 };
 
-const arrTwo = [
-	'./cards/2_of_clubs.svg',
-	'./cards/2_of_hearts.svg',
-	'./cards/2_of_spades.svg',
-	'./cards/2_of_diamonds.svg',
-];
-
-const test = {
-	hello: ['hello', 'world'],
-	name: ['basil', 'albader'],
-}
-
-console.log(test.hello[0]);
-
 // Get random number
 const getRandomNbr = (min, max) => {
 	const random = Math.floor((Math.random() * (max - min)) + min);
@@ -99,15 +85,10 @@ const getRandomNbr = (min, max) => {
 };
 
 const getRandomImg = () => {
-	//const randNbr = getRandomNbr(2, 12);
-	const randNbr = 2;
+	const randNbr = getRandomNbr(2, 12);
 
 	if (randNbr === 2) {
 		return cardImages.two[randNbr];
 	}
 };
 
-const randomImg = getRandomImg();
-playerCard1 = arrTwo[0];
-playerCard2 = cardImages.two[1];
-console.log(playerCard1);
