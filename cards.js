@@ -1,7 +1,7 @@
-const playerCard1 = document.querySelector('#pl-1');
-const playerCard2 = document.querySelector('#pl-2');
-const computerCard1 = document.querySelector('#cp-1');
-const computerCard2 = document.querySelector('#cp-2');
+let playerCard1 = document.querySelector('#pl-1');
+let playerCard2 = document.querySelector('#pl-2');
+let computerCard1 = document.querySelector('#cp-1');
+let computerCard2 = document.querySelector('#cp-2');
 
 const cardImages = {
 	eleven: [
@@ -84,18 +84,15 @@ const getRandomNbr = (min, max) => {
 	return random;
 };
 
-const randNbr = getRandomNbr(2, 12);
-console.log('randNbr: ', randNbr);
+const getRandomImg = () => {
+	//const randNbr = getRandomNbr(2, 12);
+	const randNbr = 2;
 
-// Get random card
-const getRandomCard = object => {
-	const cardEntries = Object.entries(object);
-	const randomCard = Math.floor((Math.random() * cardEntries.length));
-	return cardEntries[randomCard][1];
+	if (randNbr === 2) {
+		return cardImages.two[randNbr];
+	}
 };
 
-// Change Image
-const changeImg = (element, object) => {
-	element.src = getRandomCard(object);
-};
-
+const randomImg = getRandomImg();
+playerCard1 = cardImages.eleven[0];
+playerCard2 = randomImg;
