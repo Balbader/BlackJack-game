@@ -160,11 +160,11 @@ const startGame = () => {
 
 	start.addEventListener('click', () => {
 		/* Deal a new card 2 times and assign them to player cards array */
-		let card1 = dealNewCard();
-		let card2 = dealNewCard();
+		const card1 = dealNewCard();
+		const card2 = dealNewCard();
 
-		player.cards.push(card1);
-		player.cards.push(card2);
+		player.cards.push(card1, card2);
+		console.log(player);
 
 		matchCard(card1, playerCard1);
 		matchCard(card2, playerCard2);
