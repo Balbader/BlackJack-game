@@ -89,7 +89,6 @@ const cardImages = {
 /* Get random number function */
 const getRandomNbr = (min, max) => {
 	const random = Math.floor((Math.random() * (max - min)) + min);
-
 	return random;
 };
 
