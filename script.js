@@ -143,6 +143,14 @@ const dealNewCard = () => {
 	return newCard;
 };
 
+/* Calculate the sum of all cards  */
+const calculateSum = (array) => {
+	const sum = array.reduce((left, right) => (left + right), 0);
+	const playerTotal = document.querySelector('#player-total');
+	playerTotal.textContent = 'Player Total: ' + sum;
+	return sum;
+};
+
 /* Create a function startGame() that allow us to draw a set of two cards per player and assign them to each player */
 const startGame = () => {
 	const start = document.querySelector('#start');
@@ -155,11 +163,17 @@ const startGame = () => {
 		const card2 = dealNewCard();
 
 		player.cards.push(card1, card2);
-		console.log(player);
+		console.log(player.cards);
 
 		matchCard(card1, playerCard1);
 		matchCard(card2, playerCard2);
+		calculateSum(player.cards);
 	});
+};
+
+// Create a function checkPlayerStatus()
+const checkPlayerStatus = () => {
+	let message = '';
 };
 
 startGame();
