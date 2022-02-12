@@ -144,11 +144,37 @@ const dealNewCard = () => {
 };
 
 /* Calculate the sum of all cards  */
-const calculateSum = (array) => {
+const calculateSum = array => {
 	const sum = array.reduce((left, right) => (left + right), 0);
 	const playerTotal = document.querySelector('#player-total');
 	playerTotal.textContent = 'Player Total: ' + sum;
 	return sum;
+};
+
+/* Add resetGame() fumction to new game btn */
+const resetGame = () => {
+	const newGame = document.querySelector('new-game');
+	newGame.addEventListener('click', () => startGame());
+};
+
+/* Create a function checkPlayerStatus() */
+const checkPlayerStatus = sum => {
+	const gameMessage = document.querySelector('#message-el');
+	let message = '';
+
+	if (sum <= 20) {
+		message = 'Hit?';
+	} else if (sum === 21) {
+		message = 'BlackJack!!';
+		newPlayer.hasBlackJack = true;
+		resetGame();
+	} else {
+		message = 'You Loose :(';
+		newPlayer.isAlive = false;
+		resetGame();
+	}
+
+	gameMessage.textContent = message;
 };
 
 /* Create a function startGame() that allow us to draw a set of two cards per player and assign them to each player */
@@ -169,11 +195,6 @@ const startGame = () => {
 		matchCard(card2, playerCard2);
 		calculateSum(player.cards);
 	});
-};
-
-// Create a function checkPlayerStatus()
-const checkPlayerStatus = () => {
-	let message = '';
 };
 
 startGame();
