@@ -1,6 +1,6 @@
 console.log('The game is being built');
 /* 1. Create a player object that will be used for both the user and the computer. */
-const newPlayer = {
+const playerTemplate = {
 	isAlive: false,
 	hasBlackJack: false,
 	cards: [],
