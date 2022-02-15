@@ -177,6 +177,20 @@ const checkPlayerStatus = sum => {
 	gameMessage.textContent = message;
 };
 
+/* Create a function hit() to draw a new card */
+const hit = (array) => {
+	const newCard = document.querySelector('#new-card');
+
+	if (player.isAlive === true && player.hasBlackJack === false) {
+		newCard.addEventListener('click', () => {
+			const card = dealNewCard();
+			array.push(card);
+			const totalSum = calculateSum(array);
+			checkPlayerStatus(totalSum);
+		});
+	}
+};
+
 /* Create a function startGame() that allow us to draw a set of two cards per player and assign them to each player */
 const startGame = () => {
 	const start = document.querySelector('#start');
@@ -184,6 +198,9 @@ const startGame = () => {
 	const playerCard2 = document.querySelector('#pl-2');
 
 	start.addEventListener('click', () => {
+		/* Disable Start Game btn */
+		start.disabled = true;
+
 		/* Deal a new card 2 times and assign them to player cards array */
 		const card1 = dealNewCard();
 		const card2 = dealNewCard();
@@ -193,7 +210,8 @@ const startGame = () => {
 
 		matchCard(card1, playerCard1);
 		matchCard(card2, playerCard2);
-		calculateSum(player.cards);
+		let totalSum = calculateSum(player.cards);
+		checkPlayerStatus(totalSum);
 	});
 };
 
