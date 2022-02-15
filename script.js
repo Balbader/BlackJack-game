@@ -7,8 +7,8 @@ const newPlayer = {
 };
 
 /* Initiate player & dealer object */
-const player = Object.create(newPlayer);
-const dealer = Object.create(newPlayer);
+const player = {...newPlayer};
+const dealer = {...newPlayer};
 
 /* Create cardImg{} object to display card suits */
 const cardImages = {
