@@ -158,7 +158,7 @@ const resetGame = () => {
 };
 
 /* Create a function checkPlayerStatus() */
-const checkPlayerStatus = sum => {
+const checkPlayerStatus = (sum, playerProps) => {
 	const gameMessage = document.querySelector('#message-el');
 	let message = '';
 
