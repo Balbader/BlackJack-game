@@ -166,11 +166,11 @@ const checkPlayerStatus = sum => {
 		message = 'Hit?';
 	} else if (sum === 21) {
 		message = 'BlackJack!!';
-		newPlayer.hasBlackJack = true;
+		playerProps.hasBlackJack = true;
 		resetGame();
 	} else {
 		message = 'You Loose :(';
-		newPlayer.isAlive = false;
+		playerProps.isAlive = false;
 		resetGame();
 	}
 
@@ -178,7 +178,7 @@ const checkPlayerStatus = sum => {
 };
 
 /* Create a function hit() to draw a new card */
-const hit = (array) => {
+const hit = array => {
 	const newCard = document.querySelector('#new-card');
 
 	if (player.isAlive === true && player.hasBlackJack === false) {
