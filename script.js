@@ -152,48 +152,55 @@ const calculateSum = array => {
 };
 
 /* Add resetGame() fumction to new game btn */
-const resetGame = playerProps => {
-	const newGame = document.querySelector('new-game');
+const resetGame = () => {
+	const newGame = document.querySelector('#new-game');
+	newGame.disabled = false;
+
 	newGame.addEventListener('click', () => {
 		start.disabled = false;
-		playerProps.isAlive = true;
-		playerProps.hasBlackJack = false;
-		playerProps.cards = [];
+		startGame();
 	});
 };
 
-/* Create a function checkPlayerStatus() */
-const checkPlayerStatus = (sum, playerProps) => {
-	const gameMessage = document.querySelector('#message-el');
-	let message = '';
-
-	if (sum <= 20) {
-		message = 'Hit?';
-	} else if (sum === 21) {
-		message = 'BlackJack!!';
-		playerProps.hasBlackJack = true;
-		resetGame();
-	} else {
-		message = 'You Loose :(';
-		playerProps.isAlive = false;
-		resetGame();
-	}
-
-	gameMessage.textContent = message;
-};
 
 /* Create a function hit() to draw a new card */
 const hit = array => {
 	const newCard = document.querySelector('#new-card');
+	newCard.disabled = false;
 
-	if (player.isAlive === true && player.hasBlackJack === false) {
-		newCard.addEventListener('click', () => {
-			const card = dealNewCard();
-			array.push(card);
-			const totalSum = calculateSum(array);
-			checkPlayerStatus(totalSum);
-		});
+	newCard.addEventListener('click', () => {
+		const card = dealNewCard();
+		array.push(card);
+		const totalSum = calculateSum(array);
+		checkPlayerStatus(totalSum);
+	});
+};
+
+/* Create a function checkPlayerStatus() */
+const checkPlayerStatus = sum => {
+	const gameMessage = document.querySelector('#message-el');
+	const newCard = document.querySelector('#new-card');
+	const newGame = document.querySelector('#new-game');
+
+	let message = '';
+
+	if (sum <= 20) {
+		message = 'Hit?';
+		newGame.disabled = true;
+		hit(playerProps.cards);
+	} else if (sum === 21) {
+		message = 'BlackJack!!';
+		playerProps.hasBlackJack = true;
+		newCard.disabled = true;
+		resetGame();
+	} else {
+		message = 'You Loose :(';
+		playerProps.isAlive = false;
+		newCard.disabled = true;
+		resetGame();
 	}
+
+	gameMessage.textContent = message;
 };
 
 /* Create a function startGame() that allow us to draw a set of two cards per player and assign them to each player */
