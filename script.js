@@ -152,9 +152,14 @@ const calculateSum = array => {
 };
 
 /* Add resetGame() fumction to new game btn */
-const resetGame = () => {
+const resetGame = playerProps => {
 	const newGame = document.querySelector('new-game');
-	newGame.addEventListener('click', () => startGame());
+	newGame.addEventListener('click', () => {
+		start.disabled = false;
+		playerProps.isAlive = true;
+		playerProps.hasBlackJack = false;
+		playerProps.cards = [];
+	});
 };
 
 /* Create a function checkPlayerStatus() */
