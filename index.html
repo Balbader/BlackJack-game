@@ -2,58 +2,58 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <title>BlackJack</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>BlackJack</title>
 </head>
 
 <body>
-    <div class="container">
-        <h1 id="title">BlackJack</h1>
+  <div class="container">
+    <h1 id="title">BlackJack</h1>
 
-        <!-- Message display: game status -->
-        <p id="message-el">Want to play a round?</p>
+    <!-- Message display: game status -->
+    <p id="message-el">Want to play a round?</p>
 
-        <!-- Where the action happens -->
-        <div id="container">
-            <div class="players">
+    <!-- Where the action happens -->
+    <div id="container">
+      <div class="players">
 
-                <!-- Player Section  -->
-                <div id="player">
-                    <div class="cards-img">
-                        <img id='pl-1' class="img-1" src="./1341677_joker-cards-png.png" alt="card image">
-                        <img id='pl-2' class="img-2" src="./1341677_joker-cards-png.png" alt="card image">
-                    </div>
-                    <p>Player Cards:<br>
-                        <span id="cards">numbers will display here</span>
-                    </p>
-                    <p id="player-total">Player Total: 0</p>
-                </div>
-
-                <!-- Computer Section  -->
-                <div id="computer">
-                    <div class="cards-img">
-                        <img id='cp-1' class="img-1" src="./1341677_joker-cards-png.png" alt="card image">
-                        <img id='cp-2' class="img-2" src="./1341677_joker-cards-png.png" alt="card image">
-                    </div>
-                    <p>Computer Cards:<br>
-                        <span id="computer-cards">numbers will display here</span>
-                    </p>
-                    <p id="computer-total">Computer Total: 0</p>
-                </div>
-            </div>
+        <!-- Player Section  -->
+        <div id="player">
+          <div class="cards-img">
+            <img id='pl-1' class="img-1" src="./1341677_joker-cards-png.png" alt="card image">
+            <img id='pl-2' class="img-2" src="./1341677_joker-cards-png.png" alt="card image">
+          </div>
+          <p>Player Cards:<br>
+            <span id="cards">numbers will display here</span>
+          </p>
+          <p id="player-total">Player Total: 0</p>
         </div>
 
-        <!-- That's where our user will be able to click frenetically... -->
-        <div id="btns">
-            <button id="start">START GAME</button>
-            <button id="new-card" disabled>NEW CARD</button>
-            <button id="computer-play">COMPUTER PLAY</button>
-            <button id="new-game" disabled>NEW GAME</button>
+        <!-- Computer Section  -->
+        <div id="computer">
+          <div class="cards-img">
+            <img id='cp-1' class="img-1" src="./1341677_joker-cards-png.png" alt="card image">
+            <img id='cp-2' class="img-2" src="./1341677_joker-cards-png.png" alt="card image">
+          </div>
+          <p>Computer Cards:<br>
+            <span id="computer-cards">numbers will display here</span>
+          </p>
+          <p id="computer-total">Computer Total: 0</p>
         </div>
+      </div>
     </div>
-    <script src="./script.js"></script>
+
+    <!-- That's where our user will be able to click frenetically... -->
+    <div id="btns">
+      <button id="start">START GAME</button>
+      <button id="new-card" disabled>NEW CARD</button>
+      <button id="computer-play">COMPUTER PLAY</button>
+      <button id="new-game" disabled>NEW GAME</button>
+    </div>
+  </div>
+  <script src="./script.js"></script>
 </body>
 
 </html>
